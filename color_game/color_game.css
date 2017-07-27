@@ -1,0 +1,41 @@
+body {
+	text-align: center;
+	background-color: #000000;
+
+}
+#header {
+	background: #1d50a3;
+	color: #f7f8f9;
+}
+#bar {
+	background-color: #f7f8f9;
+	color: #1d50a3;;
+}
+#content {
+	background-color: #000000;
+	padding-top: 20px;			
+}
+.box {
+	background-color: pink;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+.dummy {
+    margin-top: 100%;
+}
+.in {
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 0;
+    right: 10px;
+    border-radius: 20px;
+}
+.red{
+    background-color: red;
+}
+#rgb_display {
+	text-transform: uppercase;
+}

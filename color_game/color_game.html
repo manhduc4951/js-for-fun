@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="color_game.css">
+	
+</head>
+<body>
+
+<div id="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>CLONE</h3>
+				<h1 id="rgb_display">RGB(123, 231, 98)</h1>
+				<h3>GUESSING ABOVE RGB COLOR</h3>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="bar">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<div class="row">
+					<div class="col-sm-4"><a id="new_game" href="javascript:void(0)">New games</a></div>
+					<div class="col-sm-4"><span id="correct_wrong_label"></span></div>
+					<div class="col-sm-4">
+						<a href="javascript:void(0)" id="easy_mode">Easy</a>
+						<span>|</span>
+						<a href="javascript:void(0)" id="hard_mode">Hard</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="content">
+	<div class="container">
+		<div class="row">
+			<div id="main_container" class="col-xs-8 col-xs-offset-2">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script
+  src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+<script type="text/javascript" src="color_game.js"></script>
+</body>
+</html>
