@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Patatap Simple</title>
+	<link rel="stylesheet" type="text/css" href="patatap_simple.css">
+</head>
+<body>
+	<div class="content">
+		<h1>Press any key from A-Z to start</h1>
+	</div>
+	<canvas id="myCanvas" resize></canvas>
+
+<script
+  src="http://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.4/paper-full.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.js"></script>
+<script type="text/paperscript" canvas="myCanvas">
+
+	// Radius of the circles
+	var rad = 300;
+
+	// Store sounds for A-Z keys
+	var keys = {};
+	for (var i = 65; i <= 90; i++) {
+		var soundFile = 'sounds/s (' + (i - 64) + ').mp3';	    
+	    keys[String.fromCharCode(i).toLowerCase()] = {sound: new Howl({src: [soundFile]})}
+	}
+	var items = [];
+
+
+	// Return random value range from min --> max
+	function random(min, max) {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+	// Return random color: rgb(x,x,x)
+	function randomColor() {
+		var color = "rgb(";
+		color += random(0,255) + ", ";
+		color += random(0,255) + ", ";
+		color += random(0,255) + ")";
+		return color;
+	}
+
+	// Event when press a key: circle + sound
+	function onKeyDown(event) {			
+		if(keys[event.key]) {
+			keys[event.key].sound.play();			
+			var path = new Path.Circle(new Point(random(50,window.innerWidth), random(50,window.innerHeight)), rad);
+			path.fillColor = randomColor();		
+			items.push(path)			
+		}			
+	}
+
+	// Shrink down the circle + change the color for each circle
+	function onFrame(event) {
+		for(var i = 0; i < items.length; i++) {
+			items[i].fillColor.hue += 1;
+			items[i].scale(.9);	
+		}
+	}
+
+</script>
+</body>
+</html>
